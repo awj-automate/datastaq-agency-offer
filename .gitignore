@@ -1,0 +1,13 @@
+.next/
+node_modules/
+.env*
+.sanity/
+
+# OS / editor cruft
+desktop.ini
+
+# Local reference material — kept out of the public repo
+DataStaq Case Studies and Testimonials.pdf
+demo.7iquid.com/
+www.assembledsystems.com/
+home-diagram.gif
