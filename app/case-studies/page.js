@@ -6,41 +6,41 @@ import Footer from '../../components/Footer';
 /* ─── Case study data ─────────────────────────────────────── */
 const caseStudies = [
   {
-    id: 'profisee',
-    industry: 'Enterprise SaaS',
-    company: 'Profisee',
-    logo: '/profisee_logo.png',
-    headline: 'Custom sales intelligence app for an enterprise SaaS team',
-    result: '+$5.6M ARR in new pipeline',
-    resultColor: 'text-emerald-600',
+    id: 'founders-row',
+    industry: 'Private Equity / Multi-Brand E-Commerce',
+    company: 'Founders Row',
+    logo: null,
+    headline: 'Portfolio-wide ad account visibility for a PE firm managing a roster of e-commerce brands',
+    result: 'Live visibility across the full portfolio',
+    resultColor: 'text-ds-primary',
     challenge:
-      'Profisee\'s marketing team had no unified software for tracking lead activity, intent signals, or pipeline attribution. Everything lived in spreadsheets, CRM records were stale, and no one knew what was actually driving pipeline.',
+      'Founders Row manages a growing roster of e-commerce brands, each with its own ad accounts, agency partners, and reporting cadence. Every portfolio review meant chasing decks and one-off spreadsheets from a dozen teams, and the deal team had no live view of how spend, ROAS, or CAC was trending across the whole portfolio.',
     solution:
-      'We shipped a custom sales intelligence app on top of Salesforce, pulling in lead scoring, intent signals, and attribution data. Automations flagged high-intent accounts in real time and routed them to the right reps instantly.',
-    techStack: ['Salesforce', 'Python', 'SQL', 'ETL Pipelines', 'Custom Dashboards'],
+      'We built a unified ad data layer that pulls every portfolio brand\'s Meta, Google, and Shopify data into one live portfolio dashboard. Proactive alerts flag underperforming campaigns, budget anomalies, and ROAS drops across every brand in real time, so the deal team spots issues before the next board meeting — not three weeks after.',
+    techStack: ['Meta Ads API', 'Google Ads API', 'Shopify', 'BigQuery', 'Custom Dashboards', 'Proactive Alerts'],
     results: [
-      { metric: '$5.6M', label: 'New ARR pipeline generated' },
-      { metric: 'Real-time', label: 'Lead and intent signal monitoring' },
-      { metric: '3x', label: 'Faster lead-to-rep routing' },
+      { metric: 'Every brand', label: 'Unified into one live view' },
+      { metric: 'Real-time', label: 'ROAS, CAC, and spend monitoring' },
+      { metric: 'Hours → Minutes', label: 'For portfolio reporting' },
     ],
   },
   {
-    id: 'tova',
-    industry: 'Legal Services',
-    company: 'TOVA QDRO & Retirement Valuators',
-    logo: '/tova_logo.png',
-    headline: 'Internal operations app for a legal services firm',
-    result: '+22% revenue from new cases',
+    id: 'bobs-watches',
+    industry: 'E-Commerce / Luxury Retail',
+    company: "Bob's Watches",
+    logo: null,
+    headline: 'Unified ad and revenue visibility for a luxury e-commerce brand',
+    result: 'Single source of truth across every paid channel',
     resultColor: 'text-emerald-600',
     challenge:
-      'TOVA\'s data was split between three systems: Lawmatics, Zoho, and QuickBooks. Intake was manual and error-prone, retirement valuations required multi-step math by hand, and leadership had no real visibility into pipeline or margins.',
+      "Bob's Watches was scaling paid spend across Meta, Google, and other channels, but performance lived in three disconnected dashboards. There was no single number for blended ROAS, no live tie between ad spend and Shopify revenue, and no early warning when a campaign's CAC started creeping.",
     solution:
-      'We built a custom internal app and data layer that unified all three systems, automated the financial calculations behind QDRO valuations, and shipped reporting dashboards that gave leadership live visibility into pipeline health and case margins.',
-    techStack: ['Google BigQuery', 'Python', 'SQL', 'Lawmatics', 'Zoho CRM', 'QuickBooks'],
+      'We connected every ad platform to their Shopify revenue data inside one live dashboard, then layered proactive alerts on top for CAC creep, ROAS dips, and budget overspends. Leadership and the ad team now share one set of numbers and catch anomalies the day they happen, not at end-of-month review.',
+    techStack: ['Meta Ads API', 'Google Ads API', 'Shopify', 'BigQuery', 'Custom Dashboards', 'Proactive Alerts'],
     results: [
-      { metric: '22%', label: 'Revenue increase from new cases' },
-      { metric: '60%', label: 'Faster client onboarding' },
-      { metric: 'Unified', label: 'Financial reporting across 3 systems' },
+      { metric: 'Unified', label: 'Ad spend + Shopify revenue in one view' },
+      { metric: 'Real-time', label: 'CAC and ROAS anomaly alerts' },
+      { metric: 'Day-of', label: 'Detection vs. end-of-month' },
     ],
   },
   {
@@ -48,18 +48,18 @@ const caseStudies = [
     industry: 'E-Commerce / Wholesale',
     company: 'X-iT Outdoors',
     logo: '/xitoutdoors_logo.png',
-    headline: 'Real-time inventory and sales app for a golf cart wholesaler',
+    headline: 'Unified ad and revenue dashboard for a wholesale e-commerce brand',
     result: '+13% new cart orders',
     resultColor: 'text-emerald-600',
     challenge:
-      'X-iT\'s sales team ran on stale inventory data scattered across Shopify, Google Analytics, and internal finance tools. Manual data entry from the team compounded the problem, making daily sales decisions unreliable.',
+      "X-iT's team ran on stale ad and revenue data scattered across Shopify, Google Analytics, and their paid channels. Manual data entry compounded the problem, leaving no single view of what was being spent, what was selling, and which campaigns were actually moving margin.",
     solution:
-      'We shipped a custom inventory and sales app with a real-time data pipeline, baked-in validation and deduplication logic, and a daily-use dashboard so the sales team could see exactly what was in stock, what was selling, and where margins were strongest.',
-    techStack: ['Python', 'SQL', 'Shopify API', 'Google Analytics', 'ETL Pipelines'],
+      'We shipped a unified ad and revenue dashboard with a real-time pipeline pulling spend, sales, and inventory into one place. Validation, deduplication, and proactive alerts surface anomalies and underperforming campaigns before they cost the business.',
+    techStack: ['Meta Ads', 'Google Ads', 'Shopify API', 'Google Analytics', 'ETL Pipelines', 'Proactive Alerts'],
     results: [
       { metric: '13%', label: 'Increase in new cart orders' },
-      { metric: 'Daily', label: 'Automated data refresh (GBs)' },
-      { metric: 'Real-time', label: 'Inventory visibility for sales team' },
+      { metric: 'Daily', label: 'Automated ad + revenue refresh' },
+      { metric: 'Real-time', label: 'Spend + revenue visibility' },
     ],
   },
   {
@@ -67,37 +67,18 @@ const caseStudies = [
     industry: 'Aviation / Leasing',
     company: 'Azorra',
     logo: '/azorra_logo.png',
-    headline: 'Custom intelligence platform for an aircraft leasing company',
+    headline: 'Live multi-source intelligence dashboard — the same engine that powers our agency portfolios',
     result: 'Real-time operational intelligence',
     resultColor: 'text-ds-primary',
     challenge:
-      'Azorra\'s team needed one app to track a global aircraft fleet, industry news, CRM activity, and internal updates. Information was scattered across five tools, slowing every fleet, market, and client decision.',
+      "Azorra's team needed one place to track a global aircraft fleet, industry news, CRM activity, and internal updates. Information was scattered across five tools, slowing every fleet, market, and client decision — the same pattern we see in agencies juggling 10-20+ client ad accounts.",
     solution:
-      'We built a custom intelligence platform that pulls live flight tracking, aviation news APIs, CRM data, and internal tools into one interface, so leadership can spot fleet risks, market shifts, and client opportunities in real time.',
-    techStack: ['Python', 'SQL', 'Flight Tracking APIs', 'CRM Integration', 'Data Warehouse'],
+      'We built a live intelligence dashboard pulling flight tracking, news APIs, CRM, and internal tools into one interface with real-time alerts on the signals that mattered. The same data-unification engine now powers our ad infrastructure work for agencies and PE portfolios.',
+    techStack: ['Python', 'SQL', 'Live Data APIs', 'CRM Integration', 'Data Warehouse', 'Proactive Alerts'],
     results: [
-      { metric: '4+', label: 'Data sources unified' },
-      { metric: 'Real-time', label: 'Fleet and market intelligence' },
+      { metric: '4+', label: 'Data sources unified into one live view' },
+      { metric: 'Real-time', label: 'Operational intelligence and alerts' },
       { metric: 'Single', label: 'Source of truth for decision-making' },
-    ],
-  },
-  {
-    id: 'eagle-search',
-    industry: 'Staffing / Recruiting',
-    company: 'Eagle Search US',
-    logo: null,
-    headline: 'AI-powered outbound app for a staffing firm',
-    result: 'Automated outbound at scale',
-    resultColor: 'text-ds-primary',
-    challenge:
-      'Eagle Search\'s team was buried in manual prospecting across Apollo, LinkedIn, and other B2B sources. There was no consistent way to score, segment, or personalize outreach at scale.',
-    solution:
-      'We shipped an AI-powered outbound app that unifies lead sources into one clean database, scores and segments leads automatically, and generates personalized outreach messaging wired straight into their campaign tools.',
-    techStack: ['Python', 'Apollo API', 'LinkedIn', 'AI/ML', 'Campaign Automation'],
-    results: [
-      { metric: 'Real-time', label: 'Lead scoring and segmentation' },
-      { metric: 'Auto', label: 'Personalized outreach generation' },
-      { metric: '5+', label: 'Lead data sources unified' },
     ],
   },
 ];
@@ -168,8 +149,9 @@ export default function CaseStudiesPage() {
                 className="font-jakarta text-lg text-ds-muted max-w-2xl mx-auto"
                 style={{ letterSpacing: '-0.02em', lineHeight: '1.7' }}
               >
-                MVPs, apps, dashboards, AI features, and custom software products we built
-                with founders and teams. Here is what we shipped and what it did for the business.
+                Live ad dashboards, portfolio-wide visibility, and unified data infrastructure
+                we built with agencies, PE firms, and direct-to-consumer brands. Here is what
+                we shipped and what it did for the business.
               </p>
             </div>
           </div>
@@ -196,11 +178,12 @@ export default function CaseStudiesPage() {
                 className="font-jakarta font-bold text-xl sm:text-2xl text-ds-heading mb-3"
                 style={{ letterSpacing: '-0.03em' }}
               >
-                And many more across industries
+                And many more across the portfolio
               </p>
               <p className="font-jakarta text-ds-muted max-w-xl mx-auto mb-6" style={{ letterSpacing: '-0.02em' }}>
-                Healthcare, fintech, real estate, logistics, manufacturing. If you have a product
-                idea and need a partner who ships week by week, we have done it before.
+                From single-brand DTC to multi-brand PE portfolios to agencies running 10-20+
+                active clients. If you need a partner who ships ad data infrastructure week by
+                week, we have done it before.
               </p>
               <a href="/schedule" className="btn-dark text-sm h-11 inline-flex">
                 Book a Strategy Call
