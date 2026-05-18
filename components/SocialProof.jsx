@@ -2,26 +2,21 @@
 
 /*
   ─────────────────────────────────────────────────────────────
-  TODO — ASSET: Agency client logos (section-tier, generic OK)
-  Replace the 6 placeholder tiles below with real agency client
-  logos once cleared for use.
-    • Depict:   wordmark / logo of each ad agency client
-    • Style:    single-colour, will render grayscale at ~55% opacity
-                and lift to full colour on hover (matches the muted,
-                premium feel of the rest of the site)
-    • Format:   SVG preferred, or transparent PNG @2x
-    • Size:     render box is 132 x 40 — supply ~264 x 80 PNG
-    • Drop into: /public  (e.g. /public/logos/agency-1.svg)
+  TODO — ASSET: still need real logo files for:
+    • /public/founders_row_logo.png
+    • /public/bobs_watches_logo.png
+  Until those land, the two entries render as styled wordmark
+  tiles so the row stays intentional. Spec for the real files:
+    • Format: SVG preferred, or transparent PNG @2x
+    • Render box is 132 x 40 — supply ~264 x 80 PNG
   ─────────────────────────────────────────────────────────────
 */
 
-const LOGO_SLOTS = [
-  '{{LOGO_AGENCY_1}}',
-  '{{LOGO_AGENCY_2}}',
-  '{{LOGO_AGENCY_3}}',
-  '{{LOGO_AGENCY_4}}',
-  '{{LOGO_AGENCY_5}}',
-  '{{LOGO_AGENCY_6}}',
+const LOGOS = [
+  { name: 'Founders Row', src: null },
+  { name: "Bob's Watches", src: null },
+  { name: 'X-iT Outdoors', src: '/xitoutdoors_logo.png' },
+  { name: 'Azorra', src: '/azorra_logo.png' },
 ];
 
 export default function SocialProof() {
@@ -34,19 +29,18 @@ export default function SocialProof() {
             className="font-jakarta text-center text-sm font-semibold text-ds-muted mb-10 reveal"
             style={{ letterSpacing: '-0.02em' }}
           >
-            Trusted by ad agencies scaling past the reporting bottleneck
+            Trusted by agencies, PE portfolios, and brands scaling past the reporting bottleneck
           </p>
 
           <div className="stagger flex flex-wrap items-center justify-center gap-x-10 gap-y-6 sm:gap-x-14">
-            {LOGO_SLOTS.map((slot, i) => (
+            {LOGOS.map((logo, i) => (
               <div
                 key={i}
                 className="group flex items-center justify-center"
-                /* TODO: swap this placeholder tile for an <img src="/logos/..." /> */
-                title={slot}
+                title={logo.name}
               >
                 <div
-                  className="flex items-center justify-center rounded-lg transition-all duration-300"
+                  className="flex items-center justify-center rounded-lg transition-all duration-300 px-3"
                   style={{
                     width: 132,
                     height: 40,
@@ -54,9 +48,17 @@ export default function SocialProof() {
                     border: '1px solid rgba(0,0,0,0.06)',
                   }}
                 >
-                  <span className="font-jakarta text-[11px] font-semibold text-ds-subtle tracking-widest uppercase">
-                    Logo {i + 1}
-                  </span>
+                  {logo.src ? (
+                    <img
+                      src={logo.src}
+                      alt={logo.name}
+                      className="max-h-7 max-w-full object-contain opacity-70 transition-opacity duration-300 group-hover:opacity-100"
+                    />
+                  ) : (
+                    <span className="font-jakarta text-[11px] font-semibold text-ds-subtle tracking-widest uppercase">
+                      {logo.name}
+                    </span>
+                  )}
                 </div>
               </div>
             ))}
