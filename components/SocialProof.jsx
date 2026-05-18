@@ -1,7 +1,7 @@
 'use client';
 
 const LOGOS = [
-  { name: 'Founders Row', src: '/founders_row.png' },
+  { name: 'Founders Row', src: '/founders_row.jpg' },
   { name: "Bob's Watches", src: '/bobs_watches.png' },
   { name: 'X-iT Outdoors', src: '/xitoutdoors_logo.png' },
   { name: 'Azorra', src: '/azorra_logo.png' },

@@ -9,7 +9,7 @@ const caseStudies = [
     id: 'founders-row',
     industry: 'Private Equity / Multi-Brand E-Commerce',
     company: 'Founders Row',
-    logo: '/founders_row.png',
+    logo: '/founders_row.jpg',
     headline: 'Portfolio-wide ad account visibility for a PE firm managing a roster of e-commerce brands',
     result: 'Live visibility across the full portfolio',
     resultColor: 'text-ds-primary',
