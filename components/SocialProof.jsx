@@ -1,20 +1,8 @@
 'use client';
 
-/*
-  ─────────────────────────────────────────────────────────────
-  TODO — ASSET: still need real logo files for:
-    • /public/founders_row_logo.png
-    • /public/bobs_watches_logo.png
-  Until those land, the two entries render as styled wordmark
-  tiles so the row stays intentional. Spec for the real files:
-    • Format: SVG preferred, or transparent PNG @2x
-    • Render box is 132 x 40 — supply ~264 x 80 PNG
-  ─────────────────────────────────────────────────────────────
-*/
-
 const LOGOS = [
-  { name: 'Founders Row', src: null },
-  { name: "Bob's Watches", src: null },
+  { name: 'Founders Row', src: '/founders_row.png' },
+  { name: "Bob's Watches", src: '/bobs_watches.png' },
   { name: 'X-iT Outdoors', src: '/xitoutdoors_logo.png' },
   { name: 'Azorra', src: '/azorra_logo.png' },
 ];
@@ -32,7 +20,7 @@ export default function SocialProof() {
             Trusted by agencies, PE portfolios, and brands scaling past the reporting bottleneck
           </p>
 
-          <div className="stagger flex flex-wrap items-center justify-center gap-x-10 gap-y-6 sm:gap-x-14">
+          <div className="stagger flex flex-wrap items-center justify-center gap-x-8 gap-y-6 sm:gap-x-12">
             {LOGOS.map((logo, i) => (
               <div
                 key={i}
@@ -40,10 +28,10 @@ export default function SocialProof() {
                 title={logo.name}
               >
                 <div
-                  className="flex items-center justify-center rounded-lg transition-all duration-300 px-3"
+                  className="flex items-center justify-center rounded-lg transition-all duration-300 px-4"
                   style={{
-                    width: 132,
-                    height: 40,
+                    width: 200,
+                    height: 80,
                     background: '#FAF6EA',
                     border: '1px solid rgba(0,0,0,0.06)',
                   }}
@@ -52,10 +40,10 @@ export default function SocialProof() {
                     <img
                       src={logo.src}
                       alt={logo.name}
-                      className="max-h-7 max-w-full object-contain opacity-70 transition-opacity duration-300 group-hover:opacity-100"
+                      className="max-h-14 max-w-full object-contain opacity-80 transition-opacity duration-300 group-hover:opacity-100"
                     />
                   ) : (
-                    <span className="font-jakarta text-[11px] font-semibold text-ds-subtle tracking-widest uppercase">
+                    <span className="font-jakarta text-[13px] font-semibold text-ds-subtle tracking-widest uppercase">
                       {logo.name}
                     </span>
                   )}
