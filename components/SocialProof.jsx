@@ -1,10 +1,10 @@
 'use client';
 
 const LOGOS = [
-  { name: 'Founders Row', src: '/founders_row.jpg' },
-  { name: "Bob's Watches", src: '/bobs_watches.png' },
-  { name: 'X-iT Outdoors', src: '/xitoutdoors_logo.png' },
-  { name: 'Azorra', src: '/azorra_logo.png' },
+  { name: 'Founders Row', src: '/founders_row.jpg', heightClass: 'h-14' },
+  { name: "Bob's Watches", src: '/bobs_watches.png', heightClass: 'h-[168px]' },
+  { name: 'X-iT Outdoors', src: '/xitoutdoors_logo.png', heightClass: 'h-14' },
+  { name: 'Azorra', src: '/azorra_logo.png', heightClass: 'h-14' },
 ];
 
 export default function SocialProof() {
@@ -20,34 +20,18 @@ export default function SocialProof() {
             Trusted by agencies, PE portfolios, and brands scaling past the reporting bottleneck
           </p>
 
-          <div className="stagger flex flex-wrap items-center justify-center gap-x-8 gap-y-6 sm:gap-x-12">
+          <div className="stagger flex flex-wrap items-center justify-center gap-x-10 gap-y-8 sm:gap-x-16">
             {LOGOS.map((logo, i) => (
               <div
                 key={i}
                 className="group flex items-center justify-center"
                 title={logo.name}
               >
-                <div
-                  className="flex items-center justify-center rounded-lg transition-all duration-300 px-4"
-                  style={{
-                    width: 200,
-                    height: 80,
-                    background: '#FAF6EA',
-                    border: '1px solid rgba(0,0,0,0.06)',
-                  }}
-                >
-                  {logo.src ? (
-                    <img
-                      src={logo.src}
-                      alt={logo.name}
-                      className="max-h-14 max-w-full object-contain opacity-80 transition-opacity duration-300 group-hover:opacity-100"
-                    />
-                  ) : (
-                    <span className="font-jakarta text-[13px] font-semibold text-ds-subtle tracking-widest uppercase">
-                      {logo.name}
-                    </span>
-                  )}
-                </div>
+                <img
+                  src={logo.src}
+                  alt={logo.name}
+                  className={`${logo.heightClass} w-auto object-contain opacity-80 transition-opacity duration-300 group-hover:opacity-100`}
+                />
               </div>
             ))}
           </div>
